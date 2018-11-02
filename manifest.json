@@ -1,0 +1,6 @@
+{
+    "name": "Custom Client UI",
+    "version": "1.0",
+    "description": "Based on the Custom Style Script extension",
+    "manifest_version": 1
+}

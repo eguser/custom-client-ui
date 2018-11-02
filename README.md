@@ -1,0 +1,1 @@
+Attempt to update the Custom Style Script extension for better UX.
