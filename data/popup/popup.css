@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+  padding: 0;
+  width: 290px;
+  height: 110px;
+  font-size: 16px;
+  overflow: hidden;
+  background-color: #FFF;
+  border: solid 1px #eff6fb;
+}
+
+table {
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+table tr td {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  user-select: none;
+  -moz-user-select: none;
+  width: calc(100% - 40px);
+  -webkit-user-select: none;
+  font-family: arial, sans-serif;
+}
+
+table tr td {
+  transition: 300ms ease all;
+  -moz-transition: 300ms ease all;
+  -webkit-transition: 300ms ease all;
+}
+
+.icon {
+  padding: 0;
+  height: 100%;
+}
+
+.status {
+  color: #FFF;
+  height: 30px;
+  cursor: default;
+  font-size: 16px;
+  text-align: center;
+  background: #1568a5;
+  vertical-align: middle;
+}
+
+.status p {
+  margin: 0;
+  padding: 0;
+}
+
+table tr td[id]:hover {background-color: #f7f7f7}
+.icon[type='state'] {background: url('state.png') no-repeat center center; background-size: 64px}
+.icon[type='options'] {background: url('options.png') no-repeat center center; background-size: 32px}
+.icon[type='support'] {background: url('support.png') no-repeat center center; background-size: 32px}
+.icon[state='disabled'] {background: url('disabled.png') no-repeat center center; background-size: 64px}
+
+#state {
+  border-left: solid 1px #eff6fb;
+  border-right: solid 1px #eff6fb;
+}

@@ -1,0 +1,80 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Options - Custom Style Script</title>
+    <link rel="icon" type="image/png" href="../icons/enabled/16.png">
+    <link rel="stylesheet" type="text/css" href="options.css">
+  </head>
+  <body class="flex">
+    <div class="section">
+      <div class="information"><p><b>I. How to Work with Custom Style Script</b></p></div>
+      <div class="information">
+        <p>
+          With "Custom Style Script" you can easily add custom styles (css) or scripts (JavaScript) to any web-page or domain. To start, just enter the page URL in which you want to insert the code in the field below (to make the URL act as a domain, just check the domain field). Next, add desired Script and Style codes to the designated fields below, then press the plus (<b>+</b>) button. Next time you refresh the added page, the code will be executed. In order to validate your code (JavaScript and CSS) before adding it to the Table, you can use Online editors such as <a target="_blank" href="http://liveweave.com/">LiveWeave</a>. Once the code is validated, add it to the table. <b>Note</b>: if you want to insert the code to all pages, simply enter star (<b>*</b>) instead of a URL. In order to submit bugs please visit Addon's <a target="_blank" href="http://mybrowseraddon.com/custom-style-script.html">Homepage</a> and fill the bug report form.
+        </p>
+      </div>
+      <div class="information"><p><b>II. Sample code</b></p></div>
+      <div class="information">
+        <p>
+          A sample Code is shown below. Column (1) shows the code number. Column (2) is where you put the desired URL. If you want to include all URLs, simply add start (<b>*</b>) to the filed. If you check Column (3), the given URL will be converted to domain. In other words, the added style and script code will be applied to all domains matching the domain derived from the given URL. If you check column (4) the addon uses <b>document.location.href</b> as the top URL (for all iframes as-well-as the main page) to check against the added URL. In other words, the addon checks whether "document.location.href" matches the given URL or not, and if it matches, the code will be injected to the page (or iframe). If you check Column (5), the addon uses <b>Tab URL</b> as the top URL for all iframes and the main page. In other words, the addon checks whether "Tab URL" matches the given URL or not, and if it matches, the code will be injected to the page and all iframes within the page. Column (6) is the JavaScript code. Column (7) is the CSS (style) code. Column (8) is to activate or inactivate the code, dark color indicates an active and light color indicates an inactive code (clicking the button will swap its color). Column (9) is to permanently delete a code item. The second row for each item has 2 more columns. The first one is for adding online JavaScript link(s), such as jQuery. The second one is for adding online CSS link(s), such as bootstrap. Note: please first add an item (could be empty) to the table below in order to see the second row. Also, to add multiple links for a single page, please add each link as a separate item.
+        </p>
+      </div>
+      <div class="information">
+        <table align="center" style="max-width: 1280px">
+          <thead><tr><td>#</td><td>URL</td><td>Domain</td><td>Top</td><td>Tab</td><td>JavaScript Code</td><td>Style (CSS)</td><td>Active</td><td>Delete</td></tr></thead>
+          <tbody>
+            <tr>
+              <td style="width: 30px">1</td>
+              <td style="width: 150px">https://www.google.com/</td>
+              <td style="width: 50px">✔</td>
+              <td style="width: 50px">✔</td>
+              <td style="width: 50px">✕</td>
+              <td style="width: 400px">window.addEventListener("load", function() {alert("Google is Loaded!")}, false);</td>
+              <td style="width: 200px">#main {background-color: yellow}</td>
+              <td style="width: 50px; background-color: #333333"></td>
+              <td style="width: 50px; background: url('close-black.png') no-repeat center center"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="content" class="flex">
+      <div class="add-style-script">
+        <div class="information">
+          <p>Enter a desired values for URL, JavaScript Code and Style (CSS), then Click on the (+) Button to add it to the Table (you can also add an empty item, just press the "+" sign to do so). If you need to add online JS or CSS codes (i.e. jQuery), please add an item to the table below first, then enter desired links for JS and CSS once the item is added to the table below. There are two areas which you can add online links for JS and CSS.</p>
+        </div>
+        <table style="height: 200px">
+          <thead><tr style="background-color: #efefef"><td>URL</td><td>JavaScript</td><td>Style (CSS)</td><td></td></tr></thead>
+          <tbody>
+            <tr id="input-field">
+              <td type="code-item"><textarea rows="5" cols="30" title="Enter a valid url" placeholder="url"></textarea></td>
+              <td type="code-item"><textarea rows="10" cols="30" title="Enter JavaScript Code" placeholder="script"></textarea></td>
+              <td type="code-item"><textarea rows="10" cols="30" title="Enter CSS Code" placeholder="style"></textarea></td>
+              <td id="input-field-add" type="code-item-add" title="Add Header Item"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <table id="code-array-table">
+          <thead>
+            <tr>
+              <td>#</td>
+              <td>URL</td>
+              <td>Domain</td>
+              <td title="Include the code only for top frame">Top</td>
+              <td title="Include the code for all iFrames">Tab</td>
+              <td>JavaScript Code / Link</td>
+              <td>Style (CSS) Code  / Link</td>
+              <td title="Activate or Inactive the code">Active</td>
+              <td title="Remove this code">Delete</td>
+            </tr>
+          </thead>
+          <tbody id="code-array-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+    <script type='text/javascript' src="options.js"></script>
+  </body>
+</html>
